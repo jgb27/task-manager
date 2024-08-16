@@ -20,6 +20,16 @@ export const getTasks = async (req: Request, res: Response) => {
     }
 };
 
+export const getTaskById = async (req: Request, res: Response) => {
+    const { id } = req.params; // Get the task ID
+    const task = await Task.findByPk(id); // Find the task by ID
+    if (task) {
+        return res.status(200).json(task); // Return the task
+    } else {
+        return res.status(404).json({ error: 'Task not found' });
+    }
+};
+
 export const updateTask = async (req: Request, res: Response) => {
     const { id } = req.params; // Get the task ID
     const { title, description, dueDate, status } = req.body; // Get the new task data
