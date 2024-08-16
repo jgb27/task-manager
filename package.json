@@ -5,6 +5,11 @@
   "repository": "https://github.com/jgb27/task-manager.git",
   "author": "João Gustavo Soares Bispo <joaogustavobispo15@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^22.3.0",
